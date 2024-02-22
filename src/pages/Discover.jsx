@@ -7,16 +7,15 @@ const Discover = () => {
   const { data, isFetching, error } = useGetTopChartsQuery();
 
   const genreTitle = 'Pop'
-  
+  console.log(data)
 
 
-  if (isFetching) return <Loader title="loading songs..." 
-   />;
+//   if (isFetching) return <Loader title="loading songs..." 
+//    />;
 
-if (error) return <Error />;
+// if (error) return <Error />;
 
 
- 
 
   return (
     <div className="flex flex-col">
@@ -37,15 +36,18 @@ if (error) return <Error />;
 
       <div className="flex flex-wrap sm:first-letter: sm:justify-start
        justify-center gap-8">
+        
         {data?.map((song, i) => (
             <SongCard
             key={song.key}
             song={song}
             i={i}
+            data={data}
             />
-            
-        ))}
 
+           
+        ))}
+              
       </div>
     </div>
   );
