@@ -42,7 +42,7 @@ if (error) return <Error />;
 
       <div className="flex flex-wrap sm:first-letter: sm:justify-start
        justify-center gap-8">
-          {data.tracks.map((song, i) => ( // Ensure data is an array
+          {data.tracks.map((song, i) => (
             <SongCard
               key={song.key}
               song={song}
@@ -54,8 +54,6 @@ if (error) return <Error />;
           ))}
       </div>
       
-      {/* Handle empty data case (optional) */}
-      {/* {!data && <p>No songs found for this genre.</p>} */}
     </div>
            
     
