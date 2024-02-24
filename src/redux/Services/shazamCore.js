@@ -1,7 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-
-
 // const options = {
 //     method: 'GET',
 //     headers: {
@@ -10,10 +8,12 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 //     }
 //   };
   
-//   fetch('https://shazam.p.rapidapi.com/charts/list', options)
+//   fetch('https://shazam.p.rapidapi.com/charts/track', options)
 //     .then(response => response.json())
-//     .then(response => console.log(response))
+//     .then(data => console.log(data))
+//     data.map(item => console.log(item))
 //     .catch(err => console.error(err));
+
 
 
     export const shazamCoreApi = createApi({
@@ -24,14 +24,13 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
                 headers.set('X-RapidAPI-Key','7d8178189amsh40f40265609fe5ap1e205fjsne71f7c09ada3')
             
               return headers;
-            }
-            
+            },
         }),
         endpoints: (builder) => ({
-            getTopCharts: builder.query({ query: () => '/charts/list' })
-        })
-    })
+            getTopCharts: builder.query({ query: () => '/charts/track' }),
+        }),
+    });
 
     export const {
-        useGetTopChartsQuery,
-    } = shazamCoreApi;
+        useGetTopChartsQuery
+    } = shazamCoreApi; 

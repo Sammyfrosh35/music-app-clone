@@ -1,19 +1,18 @@
 import { Error, Loader, SongCard } from "../components";
 import { genres } from "../assets/constants";
-import { useGetTopChartsQuery } from "../redux/Services/shazamCore";
+import { useGetTopChartsQuery} from "../redux/Services/shazamCore";
 
 
 const Discover = () => {
   const { data, isFetching, error } = useGetTopChartsQuery();
 
   const genreTitle = 'Pop'
-  console.log(data)
 
 
-//   if (isFetching) return <Loader title="loading songs..." 
-//    />;
 
-// if (error) return <Error />;
+  if (isFetching) return <Loader title="loading songs..." />;
+
+if (error) return <Error />;
 
 
 
@@ -36,20 +35,20 @@ const Discover = () => {
 
       <div className="flex flex-wrap sm:first-letter: sm:justify-start
        justify-center gap-8">
-        
-        {data?.map((song, i) => (
+          {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map((song, i) => ( // Ensure data is an array
             <SongCard
-            key={song.key}
-            song={song}
-            i={i}
-            data={data}
+              key={song.key}
+              song={song}
+              i={i}
             />
-
-           
-        ))}
-              
+          ))}
       </div>
+      
+      {/* Handle empty data case (optional) */}
+      {/* {!data && <p>No songs found for this genre.</p>} */}
     </div>
+           
+    
   );
 };
 
