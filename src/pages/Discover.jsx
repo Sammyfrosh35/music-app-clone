@@ -35,7 +35,7 @@ if (error) return <Error />;
 
       <div className="flex flex-wrap sm:first-letter: sm:justify-start
        justify-center gap-8">
-          {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map((song, i) => ( // Ensure data is an array
+          {[tobi,tope,tayo, shina, temi, tola, abike,].map((song, i) => ( // Ensure data is an array
             <SongCard
               key={song.key}
               song={song}
