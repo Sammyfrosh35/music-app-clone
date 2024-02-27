@@ -22,7 +22,7 @@ const TopPlay = (song, i) => {
   const dispatch = useDispatch();
   const { setActiveSong, isPlaying } = useSelector((state) => state.player);
   const { data, isLoading, isError } = useGetTopChartsQuery();
-  const divRef = useRef(null);
+  // const divRef = useRef(null);
 
   //  console.log(data)
   if (isLoading) {
@@ -38,9 +38,9 @@ const TopPlay = (song, i) => {
 
   const topPlays = data.tracks.slice(0, 5);
 
-  useEffect(() => {
-    divRef.current.scrollIntoView({ behavior: "smooth" });
-  }, []); 
+  // useEffect(() => {
+  //   divRef.current.scrollIntoView({ behavior: "smooth" });
+  // }, []); 
 
   const handlePauseClick = () => {
     dispatch(playPause(false));
@@ -53,7 +53,7 @@ const TopPlay = (song, i) => {
 
   return (
     <div
-      ref={divRef}
+      // ref={divRef}
       className="xl:ml-6 ml-0 xl:mb-0 mb-6 
   flex-1 xl:max-w-[500px] max-w-full flex flex-col"
     >
