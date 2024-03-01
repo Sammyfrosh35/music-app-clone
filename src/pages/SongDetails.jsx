@@ -26,10 +26,10 @@ const handlePlayClick = (song, i) => {
   dispatch(setActiveSong({ song, data, i }));  
   dispatch(playPause(true)); 
 };
-   if (isFetchingSongDetails || isFetchingRelatedSongs ) return 
-   <Loader title="searching song details" />;
+  //  if (isFetchingSongDetails || isFetchingRelatedSongs ) return 
+  //  <Loader title="searching song details" />;
 
-   if(error) return <Error />
+  //  if(error) return <Error />
 
 
  return(
@@ -39,9 +39,9 @@ const handlePlayClick = (song, i) => {
     <h2 className='text-white text-3xl font-bold'>Lyrics: </h2>
    
    <div className='mt-5'>
-   {songData?.sections[1].type === 'LYRICS'
+   {data?.sections[1].type === 'TEXT'
             ? 
-            songData?.sections[1]?.text.map((line, i) => (
+            data?.sections[1]?.text.map((line, i) => (
               <p className="text-gray-400 text-base my-1">{line}</p>
             ))
             : (
