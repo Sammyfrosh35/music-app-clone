@@ -32,8 +32,12 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
              getSongDetails: builder.query({ query: ({ songid })=> 
              `/tracks/details?track_id=${songid}` }),
-             getSongRelated: builder.query({ query: ({ songid })=> `/tracks/related?track_id=${songid}`})
-             
+             getSongRelated: builder.query({ query: ({ songid })=> `/tracks/related?track_id=${songid}`}),
+            getArtistDetails: builder.query({ query: ({ artistId })=> 
+            `/artists/details?artist_id=${artistId}` }),
+            getSongsByCountry: builder.query({ query: (CountryCode) =>
+            '/charts/country?country_Code=${countryCode}' }),
+
         }), 
     });
 
@@ -41,4 +45,6 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
         useGetTopChartsQuery,
         useGetSongDetailsQuery,
         useGetSongRelatedQuery,
+        useGetArtistDetailsQuery,
+        useGetSongsByCountryQuery,
     } = shazamCoreApi; 
