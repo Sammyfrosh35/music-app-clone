@@ -25,18 +25,21 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
             
               return headers;
             },
-        }),
+        }),   
         endpoints: (builder) => ({
             getTopCharts: builder.query({ query: () =>
                  '/charts/track' }),
 
-             getSongDetails: builder.query({ query: ({ songid })=> 
-             `/tracks/details?track_id=${songid}` }),
+             getSongDetails: builder.query({ query: ({ songid })=> `/songs/v2/get-details?track_id=${songid}` }),
+
+
              getSongRelated: builder.query({ query: ({ songid })=> `/tracks/related?track_id=${songid}`}),
-            getArtistDetails: builder.query({ query: ({ artistId })=> 
-            `/artists/details?artist_id=${artistId}` }),
-            getSongsByCountry: builder.query({ query: (CountryCode) =>
-            '/charts/country?country_Code=${countryCode}' }),
+
+
+            getArtistDetails: builder.query({ query: ({ artistId })=>`/artists/details?artist_id=${artistId}` }),
+
+
+            getSongsByCountry: builder.query({ query: (CountryCode) => '/charts/country?country_Code=${countryCode}' }),
 
         }), 
     });
