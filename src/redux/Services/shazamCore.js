@@ -51,3 +51,43 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
         useGetArtistDetailsQuery,
         useGetSongsByCountryQuery,
     } = shazamCoreApi; 
+
+
+
+//     import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
+// // First API instance
+// export const apiInstance1 = createApi({
+//   reducerPath: 'apiInstance1',
+//   baseQuery: fetchBaseQuery({
+//     baseUrl: 'https://api.example.com/endpoint1', // Specify the first base URL
+//     prepareHeaders: (headers) => {
+//       // Custom headers for the first API instance
+//       return headers;
+//     },
+//   }),
+//   endpoints: (builder) => ({
+//     // Define endpoints for the first API instance
+//     getFirstApiData: builder.query({ query: () => '/path1' }),
+//   }),
+// });
+
+// export const { useGetFirstApiDataQuery } = apiInstance1;
+
+// // Second API instance
+// export const apiInstance2 = createApi({
+//   reducerPath: 'apiInstance2',
+//   baseQuery: fetchBaseQuery({
+//     baseUrl: 'https://api.example.com/endpoint2', // Specify the second base URL
+//     prepareHeaders: (headers) => {
+//       // Custom headers for the second API instance
+//       return headers;
+//     },
+//   }),
+//   endpoints: (builder) => ({
+//     // Define endpoints for the second API instance
+//     getSecondApiData: builder.query({ query: () => '/path2' }),
+//   }),
+// });
+
+// export const { useGetSecondApiDataQuery } = apiInstance2;
